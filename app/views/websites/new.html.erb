@@ -1,0 +1,18 @@
+<h1> Add a new websites</h1>
+
+<%= form_tag '/websites', method: :post do %>
+    
+    <div>
+    <%=label_tag :website_url  %>
+    <%= text_field_tag :website_url %>
+    </div>
+
+    <%= submit_tag "Enter Websites" %>
+
+
+
+<% end %>
+
+
+
+<h1> "ADD MORE LINKS" BUTTON </h1> 

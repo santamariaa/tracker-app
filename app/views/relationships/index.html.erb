@@ -1,0 +1,13 @@
+<h1>This is the page the user sees after inputing websites OR after user signs in </h1>
+<h3>* List all websites--website url not showing up in database when there are multiple form_tags and text_field_tags. works with one form tag only</h3>
+<h3>* Assign whether website is productive or not</h3>
+<h3>* "Add New website" link</h3>
+<h3>* "Delete" link </h3>
+
+<h1>List of all websites</h1>
+<% @websites.each do |website| %>
+    <h3><%= website.website_url %></h3>
+<% end %>
+
+
+
