@@ -1,14 +1,13 @@
 <h1> Add a new websites</h1>
 
-<%= form_tag '/websites', method: :post do %>
+<%= form_tag '/relationships',  method: :post do %>
     
     <div>
     <%=label_tag :website_url  %>
-    <%= text_field_tag :website_url %>
+    <%= text_field_tag :website_url, @website.website_url %>
     </div>
 
     <%= submit_tag "Enter Websites" %>
-
 
 
 <% end %>

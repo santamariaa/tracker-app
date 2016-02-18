@@ -1,5 +1,6 @@
 class WebsitesController < ApplicationController
 
+
     def new
     end
 

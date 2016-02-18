@@ -1,0 +1,35 @@
+<%= form_tag "/visits", method: :post do %>
+    
+    <div>
+    <%label_tag :relationship_id  %>
+    <% text_field_tag :relationship_id %>
+
+    </div>
+
+
+    <div>
+    <%label_tag :checked_in  %>
+    <% text_field_tag :checked_in %>
+
+    </div>
+
+    <div>
+    <%label_tag :checked_out  %>
+    <% text_field_tag :checked_out %>
+
+    </div>
+    
+      <div>
+    <%= radio_button_tag(:checked_in, "#") %>
+    <%= label_tag(:checked_in, "Check In") %>
+    <%= radio_button_tag(:checked_out, "#") %>
+    <%= label_tag(:checked_out, "Check Out") %>
+
+      </div>
+
+
+    <%= submit_tag "Submit" %>
+
+<% end %>
+
+

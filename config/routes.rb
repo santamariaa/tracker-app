@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
-
-  devise_scope :user do
-    root "devise/sessions#new"
-  end
   
-  # get '/' => 'websites#index'
+  root to: 'relationships#index'
+  
   get '/websites' => 'websites#index'
   get '/websites/new' => 'websites#new'
   post '/websites' => 'websites#create'
@@ -23,6 +20,16 @@ Rails.application.routes.draw do
   get '/relationships/:id/edit' => 'relationships#edit'
   patch '/relationships/:id' => 'relationships#update'
   delete '/relationships/:id' => 'relationships#destroy'
+
+  get '/visits' => 'visits#index'
+  get '/visits/new' => 'visits#new'
+  post '/visits' => 'visits#create'
+  get '/visits/:id' => 'visits#show'
+  get '/visits/:id/edit' => 'visits#edit'
+  patch '/visits/:id' => 'visits#update'
+  delete '/visits/:id' => 'visits#destroy'
+
+  
 
 
 

@@ -1,0 +1,31 @@
+<%= form_tag "/relationships/#{@relationship.id}", method: :patch do %>
+    
+    <div>
+    <%label_tag :user_id  %>
+    <% text_field_tag :user_id %>
+
+    </div>
+
+
+    <div>
+    <%label_tag :website_id  %>
+    <% text_field_tag :website_id %>
+
+    </div>
+    
+    <div>
+  <%= radio_button_tag(:productive, "true") %>
+  <%= label_tag(:age_child, "Productive") %>
+  <%= radio_button_tag(:productive, "false") %>
+  <%= label_tag(:age_adult, "Unproductive") %>
+
+    </div>
+
+
+
+
+    <%= submit_tag "Submit" %>
+
+<% end %>
+
+
