@@ -3,8 +3,12 @@ class Relationship < ActiveRecord::Base
     belongs_to :website
     has_many :visits
 
-    def productive
-
+  def total_time
+    total = 0
+    visits.each do |visit| 
+      total += visit.visit_time 
     end
+    total
+  end
 end
  

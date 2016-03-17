@@ -5,7 +5,9 @@ class WebsitesController < ApplicationController
     end
 
     def create
-        @website = Website.create({website_url: params[:website_url]})
+        url = Website.url_segment(params[:website_url])
+
+        @website = Website.create(website_url: url)
 
         flash[:success] = "New websites added!"
         

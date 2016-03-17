@@ -22,15 +22,19 @@ Rails.application.routes.draw do
   delete '/relationships/:id' => 'relationships#destroy'
 
   get '/visits' => 'visits#index'
-  get '/visits/new' => 'visits#new'
+  get '/relationships/:relationship_id/visits/new' => 'visits#new'
   post '/visits' => 'visits#create'
   get '/visits/:id' => 'visits#show'
   get '/visits/:id/edit' => 'visits#edit'
   patch '/visits/:id' => 'visits#update'
   delete '/visits/:id' => 'visits#destroy'
 
-  
 
-
+  namespace :api do
+    namespace :v1 do
+      get '/relationships' => 'relationships#index'
+      post '/visits' => 'visits#create'
+    end
+  end
 
 end

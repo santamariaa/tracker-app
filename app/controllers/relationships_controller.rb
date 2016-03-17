@@ -2,7 +2,8 @@ class RelationshipsController < ApplicationController
     before_filter :authenticate_user!
 
     def index
-        @websites = current_user.websites 
+        @relationships = current_user.relationships 
+        # @total_time = current_user.relationships.first.total_time
     end
 
     def new
@@ -10,11 +11,13 @@ class RelationshipsController < ApplicationController
     end
 
     def create
-        @website = Website.find_or_create_by({website_url: params[:website_url]})
+        url = Website.url_segment(params[:website_url])
+
+        @website = Website.find_or_create_by(website_url: url)
         if @website.valid? 
 
-        relationship = Relationship.create(user_id: current_user.id,
-                                            website_id: website.id,
+        relationship = Relationship.find_or_create_by(user_id: current_user.id,
+                                            website_id: @website.id,
                                             productive: false)
             
             flash[:success] = "New websites added!"

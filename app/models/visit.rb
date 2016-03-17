@@ -8,4 +8,19 @@ class Visit < ActiveRecord::Base
     self.relationship && self.relationship.website
   end
 
+  def friendly_time
+    Time.at(visit_time).utc.strftime("%H:%M:%S")
+  end
+
+  def visit_time
+    p '****************'
+    p checked_out
+    if checked_out == nil
+      return 0
+    else
+      x = checked_out - checked_in
+      p x
+    end 
+
+  end
 end
