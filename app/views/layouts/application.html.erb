@@ -41,7 +41,8 @@
 						<div class="col-md-2">
 							<!-- Logo section -->
 							<div class="logo">
-								<h1><a href="#"><i class="fa fa-laptop"></i> Brave</a></h1>
+								<h1><a href="/relationships"><i class="fa fa-laptop"></i> Productiv-T</a></h1>
+
 							</div>
 						</div>
 						<div class="col-md-9">
@@ -50,8 +51,8 @@
 							<div class="navy">			
 								<ul>
 									<!-- Main menu -->
-									<li><a href="#">Home</a></li>
-								
+									<!-- <li><a href="#">Home</a></li> -->
+									<li> <%= link_to "Home", "/relationships", method: :get %></li>
 									<li> <%= link_to "Add Another Website", "/relationships/new", method: :get %></li>
 
 									
