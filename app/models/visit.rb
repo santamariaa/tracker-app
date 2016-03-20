@@ -13,8 +13,6 @@ class Visit < ActiveRecord::Base
   end
 
   def visit_time
-    p '****************'
-    p checked_out
     if checked_out == nil
       return 0
     else
