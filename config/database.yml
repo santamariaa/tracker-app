@@ -50,5 +50,8 @@ test:
 production:
   <<: *default
   database: tracker-app_production
+  adapter: postgresql
+  encoding: unicode
+  pool: 5  
   username: tracker-app
   password: <%= ENV['TRACKER-APP_DATABASE_PASSWORD'] %>
