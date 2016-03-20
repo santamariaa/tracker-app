@@ -2,7 +2,8 @@
 <p>Completely based on Twitter bootstrap. Use <code>panel-XXX</code> (Replace XXX with color name) class for Color backgrounds.</p>
 <hr />
 
-
+<%= link_to "Reset", "/api/v1/visits/reset", method: :delete, class: "btn btn-danger" %>
+<!-- <a href="#" class="btn btn-danger">reset</a> -->
 <!-- Accordion starts -->
 <div class="panel-group" id="accordion-alt2">
  <!-- Panel. Use "panel-XXX" class for different colors. Replace "XXX" with color. -->
@@ -50,6 +51,7 @@
 
                 </tr>
             <% end %>
+
         </tbody>
         </table>
         </div>
