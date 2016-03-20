@@ -14,7 +14,15 @@ class Api::V1::VisitsController < ApplicationController
   def create
 
     user = User.find_by(email: params[:email])
-
+    puts "*******************************************"
+    puts "*******************************************"
+    puts "*******************************************"
+    puts "*******************************************"
+    p params
+    puts "*******************************************"
+    puts "*******************************************"
+    puts "*******************************************"
+    puts "*******************************************"
     if user
       adjusted_time = DateTime.strptime(params[:time],'%s')
 
@@ -33,7 +41,7 @@ class Api::V1::VisitsController < ApplicationController
       end
     end
     
-    render json: {message: success}
+    render json: {message: "success"}
   end
 
   def reset
