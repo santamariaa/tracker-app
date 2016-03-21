@@ -47,7 +47,7 @@
             <% @relationships.each do |relationship| %>
                 <tr>
                   <td><%= link_to relationship.website.website_url, "/visits/#{relationship.id}" %></td>
-                  <td><%= link_to relationship.total_time, "/relationships/#{relationship.id}" %></td>
+                  <td><%= link_to relationship.friendly_time, "/relationships/#{relationship.id}" %></td>
 
                 </tr>
             <% end %>

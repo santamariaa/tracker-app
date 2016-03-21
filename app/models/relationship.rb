@@ -10,5 +10,10 @@ class Relationship < ActiveRecord::Base
     end
     total
   end
+
+  def friendly_time
+    Time.at(total_time).utc.strftime("%H:%M:%S")
+  end
+
 end
  
