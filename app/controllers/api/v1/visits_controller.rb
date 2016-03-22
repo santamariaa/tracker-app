@@ -5,7 +5,7 @@ class Api::V1::VisitsController < ApplicationController
 
     relationships_json = []
     @relationships.each do |relationship|
-      relationships_json << { name: website_url, y: total_time }
+        relationships_json << { name: website_url, y: total_time }
     end
 
     render json: relationships_json
