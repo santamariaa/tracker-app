@@ -46,7 +46,10 @@ class VisitsController < ApplicationController
       redirect_to "/visits/#{@current_visit.id}"
     end
 
-    def destroy
-    end
+  def reset
+    Visit.delete_all
+    Website.delete_all
+    redirect_to action: :index
+  end
     
 end

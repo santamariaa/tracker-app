@@ -44,10 +44,7 @@ puts "**********************"
     render json: {message: "success"}
   end
 
-  def reset
-    Visit.delete_all
-    redirect_to action: :index
-  end
+
 
   #   if relationship
   #     # if no visits exist

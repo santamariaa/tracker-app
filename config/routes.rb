@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   patch '/visits/:id' => 'visits#update'
   delete '/visits/:id' => 'visits#destroy'
 
+  delete '/reset' => 'visits/reset'
 
   namespace :api do
     namespace :v1 do
