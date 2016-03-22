@@ -46,7 +46,7 @@
 
             <% @relationships.each do |relationship| %>
                 <tr>
-                <% if relationship.website %>
+                <% if relationship.website && relationship.friendly_time > 0 %>
                   <td><%= link_to relationship.website.website_url, "/visits/#{relationship.id}" %></td>
                   <td><%= link_to relationship.friendly_time, "/relationships/#{relationship.id}" %></td>
                 <% end %>
