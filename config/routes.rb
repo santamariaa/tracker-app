@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/relationships/:id' => 'relationships#show'
   get '/relationships/:id/edit' => 'relationships#edit'
   patch '/relationships/:id' => 'relationships#update'
+  delete '/relationships/reset' => 'relationships/reset'
   delete '/relationships/:id' => 'relationships#destroy'
 
   get '/visits' => 'visits#index'
@@ -29,7 +30,6 @@ Rails.application.routes.draw do
   patch '/visits/:id' => 'visits#update'
   delete '/visits/:id' => 'visits#destroy'
 
-  delete '/visits/reset' => 'visits/reset'
 
   namespace :api do
     namespace :v1 do

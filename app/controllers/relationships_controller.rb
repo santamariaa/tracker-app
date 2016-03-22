@@ -46,6 +46,12 @@ class RelationshipsController < ApplicationController
         redirect_to "/relationships"
     end
 
+    def reset
+      Visit.delete_all
+      Website.delete_all
+      redirect_to action: :index
+    end
+
 # find or create rails
 
 end
