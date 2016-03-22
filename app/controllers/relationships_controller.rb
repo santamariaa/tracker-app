@@ -49,6 +49,7 @@ class RelationshipsController < ApplicationController
     def reset
       Visit.delete_all
       Website.delete_all
+      Relationship.delete_all
       redirect_to action: :index
     end
 
