@@ -1,7 +1,7 @@
 (function() {
  "use strict";
 
- angular.module("app").controller("relationshipsCtrl", function($scope, $http){
+ angular.module("app").controller("relationshipsCtrl",["$scope", "$http", function($scope, $http){
      
      $scope.setup = function(){
         $scope.user_id = window.user_id
@@ -64,5 +64,5 @@
      }
 
      window.scope = $scope; 
-   });
+   }]);
 }());
