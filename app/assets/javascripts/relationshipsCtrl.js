@@ -4,8 +4,8 @@
  angular.module("app").controller("relationshipsCtrl", function($scope, $http){
      
      $scope.setup = function(){
-
-       $http.get('api/v1/relationships.json').then(function(response){
+        $scope.user_id = window.user_id
+       $http.get('api/v1/relationships.json?user_id=' + $scope.user_id).then(function(response){
         
             var relationships = response.data;
 
