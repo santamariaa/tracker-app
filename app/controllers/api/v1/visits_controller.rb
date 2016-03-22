@@ -32,7 +32,7 @@ puts "**********************"
         relationship = Relationship.find_or_create_by(website_id: website.id, user_id: user.id)
       end
 
-      if visit = relationship.visits.find_by(checked_out: nil)
+      if visit = user.visits.find_by(checked_out: nil)
         visit.update(checked_out: adjusted_time)
       end
 
