@@ -66,7 +66,11 @@ background: white;
 .header-2 {
 
 background-color: #32c8de;
+padding: 0px 0px;
+}
 
+.header-2 .logo {
+  margin: 10px 0px 15px 0px;
 }
 
 .header-2 .navy > ul > li > a {
@@ -80,6 +84,11 @@ background-color: #32c8de;
 .header-2 .navy > ul > li:hover > a,
 .header-2 .navy > ul > li > a:hover {
   color: #666;
+}
+
+
+#logo {
+  color: #fff !important;
 }
 
 // h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
