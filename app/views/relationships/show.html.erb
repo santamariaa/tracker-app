@@ -1,11 +1,80 @@
-<h1>This is the page where you would see the each individual website's info</h1>
+    
 
-<h1> Productive</h1>
+    <div class="panel-group" id="accordion-alt2">
+     <!-- Panel. Use "panel-XXX" class for different colors. Replace "XXX" with color. -->
+     <div>
+        <br>
+        <br>
+        <br>
+     </div>
+    <div class="panel panel-green"> 
+        <!-- Panel heading -->
+         <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse"  href="#collapseOne-alt2">
+                 List of all Visits for <%= @website.website_url %>
+              </a>
+            </h4>
+         </div>
+         <div id="collapseOne-alt2" class="panel-collapse collapse in">
+            <!-- Panel body -->
+            <div class="panel-body">
+            <table style="width:100%">
+              <thead>
+              <style>
+              table, th, td {
+                  border: 1px solid black;
+                  border-collapse: collapse;
+              }
+              th, td {
+                  padding: 15px;
+              }
+              </style>
+                <tr>  
+                  <th>
+                    List of all of website's visits for user 
+                  </th>
 
+                  <th>
+                    Checked In
+                  </th>
 
+                  <th>
+                    Checked Out
+                  </th>
 
+                  <th>
+                    Total Time 
+                  </th>
 
+                </tr>
+              </thead>
 
-<h1> "ADD MORE LINKS" BUTTON </h1> 
+            <tbody>
 
-<h3> <%= link_to "Go To Tracker", "/visits/new"%> </h3>
+                <% @visits.each do |visit| %>
+                    <tr>
+                    <% if visit.website && visit.friendly_time != "00:00:00" %>
+                      <td><%= link_to @website.website_url, "/visits/#{visit.id}" %></td>
+                      <td><%= link_to visit.friendly_checked_in, "/visits/#{visit.id}" %></td>
+                      <td><%= link_to visit.friendly_checked_out, "/visits/#{visit.id}" %></td>
+                      <td><%= link_to visit.total_time, "/visits/#{visit.id}" %></td>
+                    <% end %>
+                    </tr>
+                <% end %>
+                
+                <tr id="relationship-total">
+                    <td>Total time on Site</td>
+                    <td></td>
+                    <td></td>
+                    <td><%= link_to @relationship.friendly_time, "/" %></td>
+                </tr>
+            </tbody>
+            </table>
+            </div>
+         </div>
+      </div>
+      
+
+      
+    </div>

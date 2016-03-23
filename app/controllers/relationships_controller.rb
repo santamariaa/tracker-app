@@ -30,7 +30,9 @@ class RelationshipsController < ApplicationController
     end
 
     def show
-        @website = Website.find_by(id: params[:id])
+        @relationship = Relationship.find_by(id: params[:id])
+        @website = @relationship.website
+        @visits = @relationship.visits
     end
 
     def edit

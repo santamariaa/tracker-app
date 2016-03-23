@@ -21,4 +21,16 @@ class Visit < ActiveRecord::Base
     end 
 
   end
+
+  def friendly_checked_in
+    Time.at(checked_in).utc.strftime("%H:%M:%S")
+  end
+
+  def friendly_checked_out
+    Time.at(checked_out).utc.strftime("%H:%M:%S")
+  end
+
+  def total_time
+    Time.at(visit_time).utc.strftime("%H:%M:%S")
+  end
 end

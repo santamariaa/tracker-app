@@ -8,7 +8,7 @@
 <!-- Accordion starts -->
 <div class="panel-group" id="accordion-alt2">
  <!-- Panel. Use "panel-XXX" class for different colors. Replace "XXX" with color. -->
- <div class="panel panel-red">
+ <div class="panel panel-green">
     <div class="panel-heading">
        <h4 class="panel-title">
          <a data-toggle="collapse"  href="#collapseTwo-alt2" >
@@ -60,7 +60,7 @@
             <% @relationships.each do |relationship| %>
                 <tr>
                 <% if relationship.website && relationship.friendly_time != "00:00:00" %>
-                  <td><%= link_to relationship.website.website_url, "/visits/#{relationship.id}" %></td>
+                  <td><%= link_to relationship.website.website_url, "/relationships/#{relationship.id}" %></td>
                   <td><%= link_to relationship.friendly_time, "/relationships/#{relationship.id}" %></td>
                 <% end %>
                 </tr>
