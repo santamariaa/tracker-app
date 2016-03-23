@@ -14,6 +14,8 @@ class RelationshipsController < ApplicationController
         url = Website.url_segment(params[:website_url])
 
         @website = Website.find_or_create_by(website_url: url)
+
+        if @website == ""
         if @website.valid? 
 
         relationship = Relationship.find_or_create_by(user_id: current_user.id,
