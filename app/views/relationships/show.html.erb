@@ -75,6 +75,38 @@
          </div>
       </div>
       
-
       
     </div>
+
+    
+    <script type="text/javascript">;
+    if (navigator.appName == "Microsoft Internet Explorer") {
+    $(window).load(function () { 
+    $(window).load(function () {
+    self.location.reload (true);
+    });
+    });
+    } else {
+    window.addEventListener('load', function () {
+    self.name = '_refreshed_';
+    window.addEventListener('pageshow', function () {
+    if (self.name != '_refreshed_') {
+    self.location.reload(true);
+    }
+    }, false);
+    window.addEventListener('pagehide', function () {
+    self.name = '';
+    }, false);
+    window.addEventListener('focus', function () {
+    if (self.name != '_refreshed_') {
+    self.location.reload(true);
+    }
+    self.name = '';
+    }, false);
+    window.addEventListener('blur', function () {
+    self.name = '';
+    }, false);
+    }, false);
+    }
+    </script>
+
