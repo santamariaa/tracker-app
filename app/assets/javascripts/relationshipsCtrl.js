@@ -9,7 +9,7 @@
         
             var relationships = response.data;
 
-            $('#container').highcharts({
+            $('#pie_graph').highcharts({
              chart: {
                  plotBackgroundColor: null,
                  plotBorderWidth: null,

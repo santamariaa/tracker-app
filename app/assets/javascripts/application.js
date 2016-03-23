@@ -47,6 +47,7 @@
 //= require theme/support-filter
 //= require theme/waypoints.min
 //= require angular
+//= require highcharts
 //=require app
 //= require_tree .
 
