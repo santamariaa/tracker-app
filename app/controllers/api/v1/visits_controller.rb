@@ -22,18 +22,17 @@ class Api::V1::VisitsController < ApplicationController
 
       if params[:url]
         url = Website.url_segment(params[:url])
-        unless url == "whispering-plateau-16609.herokuapp.com"
           website = Website.find_or_create_by(website_url: url)
+        unless url == "whispering-plateau-16609.herokuapp.com"
           relationship = Relationship.find_or_create_by(website_id: website.id, user_id: user.id)
         end
       end
 
+      if visit = user.visits.find_by(checked_out: nil)
+        visit.update(checked_out: adjusted_time)
+      end
+
       unless url == "whispering-plateau-16609.herokuapp.com"
-
-        if visit = user.visits.find_by(checked_out: nil)
-          visit.update(checked_out: adjusted_time)
-        end
-
         if params[:url]
           Visit.create(relationship_id: relationship.id, checked_in: adjusted_time)
         end
