@@ -9,6 +9,7 @@ class WebsitesController < ApplicationController
         p '+++++++++++++++++++'
         p params[:website_url]
         p '+++++++++++++++++++'
+        
         if params[:website_url] != 'whispering-plateau-16609.herokuapp.com'
             url = Website.url_segment(params[:website_url])
             @website = Website.create(website_url: url)

@@ -13,31 +13,30 @@ class Api::V1::VisitsController < ApplicationController
 
   def create
 
-    user = User.find_by(email: params[:email])
 
-puts "**********************"
-puts "**********************"
-puts "**********************"
-p user
-puts "**********************"
-puts "**********************"
-puts "**********************"
+
+    user = User.find_by(email: params[:email])
 
     if user
       adjusted_time = DateTime.strptime(params[:time],'%s')
 
       if params[:url]
         url = Website.url_segment(params[:url])
-        website = Website.find_or_create_by(website_url: url)
-        relationship = Relationship.find_or_create_by(website_id: website.id, user_id: user.id)
+        unless url == "whispering-plateau-16609.herokuapp.com"
+          website = Website.find_or_create_by(website_url: url)
+          relationship = Relationship.find_or_create_by(website_id: website.id, user_id: user.id)
+        end
       end
 
-      if visit = user.visits.find_by(checked_out: nil)
-        visit.update(checked_out: adjusted_time)
-      end
+      unless url == "whispering-plateau-16609.herokuapp.com"
 
-      if params[:url]
-        Visit.create(relationship_id: relationship.id, checked_in: adjusted_time)
+        if visit = user.visits.find_by(checked_out: nil)
+          visit.update(checked_out: adjusted_time)
+        end
+
+        if params[:url]
+          Visit.create(relationship_id: relationship.id, checked_in: adjusted_time)
+        end
       end
     end
     
