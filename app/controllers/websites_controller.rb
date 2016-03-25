@@ -5,12 +5,12 @@ class WebsitesController < ApplicationController
     end
 
     def create
-        url = Website.url_segment(params[:website_url])
         
-        p '*******************'
+        p '+++++++++++++++++++'
         p params[:website_url]
-        p '*******************'
+        p '+++++++++++++++++++'
         if params[:website_url] != 'whispering-plateau-16609.herokuapp.com'
+            url = Website.url_segment(params[:website_url])
             @website = Website.create(website_url: url)
         end
         flash[:success] = "New websites added!"
